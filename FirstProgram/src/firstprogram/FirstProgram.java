@@ -25,7 +25,7 @@ public class FirstProgram {
             // %4d makes digit fit within four spaces, %-4.2f (float)score is left justify (formatting)
         
         System.out.printf("Hello %s, what is your score? ", name);
-        Scanner input = new Scanner(System.in);
+        Scanner input = new Scanner(System.in); //**NOTICE when you create a new obj, no need to delete in Java
         int score = input.nextInt();
         System.out.printf("Your score is %d\n", score);
         
