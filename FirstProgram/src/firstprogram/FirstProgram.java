@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package firstprogram;
+import java.util.Scanner; //input a new library
 
 /**
  *
@@ -16,7 +17,18 @@ public class FirstProgram {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.println("Hola Mundo!");
+        String name = "Kat";
+        //double score = 95.7;
+        //System.out.printf("Hello %s your score is %-4.2f.\n", name, (float)score); 
+            //(int) static casts the double into an int; (float) for formatting
+            // %s = string, %d = digit, %c = character...
+            // %4d makes digit fit within four spaces, %-4.2f (float)score is left justify (formatting)
+        
+        System.out.printf("Hello %s, what is your score? ", name);
+        Scanner input = new Scanner(System.in);
+        int score = input.nextInt();
+        System.out.printf("Your score is %d\n", score);
+        
     }
     
 }
