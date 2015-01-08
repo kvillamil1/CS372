@@ -6,7 +6,7 @@
 package gui.tutorial;
 
 /**
- *
+ * Source code for GUI Celsius Converter
  * @author Kat
  */
 public class CelciusConverter extends javax.swing.JFrame {
