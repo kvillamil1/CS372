@@ -7,7 +7,7 @@ package hw1;
 import java.util.Scanner;
 
 /**
- * Calculates the area of circle given a radius inputted by the user
+ * Calculates the area of circle given a radius inputted by the user.
  * @author Kat
  */
 public class CircleArea {
