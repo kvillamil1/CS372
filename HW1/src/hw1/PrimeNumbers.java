@@ -18,6 +18,8 @@ public class PrimeNumbers {
         System.out.println("List of prime numbers from 1-100:");
         for (int i=1; i<=100; i++) {
                 for (int j=1; j <= i; j++) {
+                    //PT: If your for loop starts at 2, and ends when j <= i/2, your
+                    //    if statements will be much cleaner
                     if (i % j == 0 && i != j && j!= 1) {
                         break;
                     }
