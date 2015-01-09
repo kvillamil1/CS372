@@ -20,7 +20,7 @@ public class CircleArea {
         System.out.print("Enter the size of the circle's radius: ");
             Scanner input = new Scanner(System.in);
             int radius = input.nextInt();
-            final double PI = 3.14;
+            final double PI = 3.14; //PT: Use java.lang.Math.PI instead
             double area = radius*radius*PI;
             System.out.println("The area of the circle is: " + area + "\n");
     }
