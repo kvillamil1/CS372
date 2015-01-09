@@ -36,8 +36,10 @@ public class HW1 {
             if (args.length > 0 && args[0].equalsIgnoreCase("spanish"))
                 greeting = "hola mundo\n";
             if (args.length > 0 && args[0].equalsIgnoreCase("fillipino"))
+            //PT: Well done, I like this. I'll need to learn how to pronounce it, though!
                 greeting = "Kamusta mundo\n";
             if (args.length > 0 && args[0].equalsIgnoreCase("swahili"))
+            //PT: And I'd like to hear how this is pronounced, too.
                 greeting = "Wapendwa dunia\n";
             System.out.println(greeting);
         
