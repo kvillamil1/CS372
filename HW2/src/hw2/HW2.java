@@ -11,7 +11,6 @@ import java.util.*;
  * @author Kat
  */
 public class HW2 {
-
     /**
      * @param args the command line arguments
      */
@@ -23,8 +22,16 @@ public class HW2 {
         
         //PR2_3: Gerbil Map
         Gerbil.makeMap();
-        
+       
         //PR2_4: Calculating PI
+        int i = Integer.parseInt(args[0]);
+        PI.calculatePI(i);
+        
+        //PR2_5: GUI PI
+            //Work done in GUIpi.java
+        
+        //PR2_6: Homework Tracker
+            //Work done in GUItracker.java & HwTracker.java
     }
     
 }

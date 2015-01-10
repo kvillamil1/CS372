@@ -31,12 +31,15 @@ public class Gerbil {
     }
     
     /**
-     * Allows gerbils to "hop" (Prints out gerbil number and " is hopping").
+     * Allow gerbils to "hop" (Prints out gerbil number and " is hopping").
      */
     public void hop() {
         System.out.println(toString() + " is hopping");
     }
     
+    /**
+     * Creates a list of gerbils; PR2_2 uses an iterator to step through.
+     */
     public static void makeList() {
         //PR2_1
         System.out.println("PR2_1: Gerbil ArrayList");
@@ -57,6 +60,9 @@ public class Gerbil {
         System.out.print("\n");
     }
     
+    /**
+     * Creates a map of gerbils.
+     */
     public static void makeMap() {
         System.out.println("PR2_3: Gerbil Map");
         Map<String, Gerbil> gerbilsmap = new HashMap<String, Gerbil>();
