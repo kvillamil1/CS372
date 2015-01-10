@@ -5,7 +5,7 @@
  */
 package hw2;
 
-import java.util.ArrayList;
+import java.util.*;
 
 
 /**
@@ -13,29 +13,25 @@ import java.util.ArrayList;
  * @author Kat
  */
 public class HwTracker {
-    private int scoreTotal = 0;
-    private int scoreCount = 10;
-    private int minimum=0;
-    private int maximum=0;
-    private double average=0;
-    ArrayList homework = new ArrayList<HwTracker>();
 
-    public int min() {
-        for (int i = 0; i < homework.size(); i++) {
-            ((HwTracker) homework.
-        return minimum;
+    public static double min(ArrayList<Double> homework) {
+        Collections.sort(homework);
+        return Collections.min(homework);
     }
     
-    public int max() {
-        return maximum;
+    public static double max(ArrayList<Double> homework) {
+        Collections.sort(homework);
+        return Collections.max(homework);
     }
     
-    public int total() {
-        return scoreTotal;
-    }
-    
-    public double average() {
-        average = scoreTotal/scoreCount;
+    public static double average(ArrayList<Double> homework) {
+        double scoreTotal = 0;
+        
+        for(int i =0; i<homework.size();i++) {
+            scoreTotal = scoreTotal + homework.get(i);
+        }
+        
+        double average = scoreTotal/homework.size();
         return average;
     }
     
