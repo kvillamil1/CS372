@@ -9,21 +9,37 @@ import java.util.*;
 
 
 /**
- *
+ * Creates a list to hold homework scores and calculates the lowest, highest
+ * and average scores.
  * @author Kat
  */
 public class HwTracker {
-
+    
+    /**
+     * Searches through the homework list and returns the lowest score.
+     * @param homework
+     * @return the lowest score in the homework list
+     */
     public static double min(ArrayList<Double> homework) {
         Collections.sort(homework);
         return Collections.min(homework);
     }
     
+    /**
+     * Searches through the homework list and returns the highest score.
+     * @param homework
+     * @return the highest score in the homework list
+     */
     public static double max(ArrayList<Double> homework) {
         Collections.sort(homework);
         return Collections.max(homework);
     }
     
+    /**
+     * Calculates the average score in the homework list.
+     * @param homework
+     * @return the average score in the homework list
+     */
     public static double average(ArrayList<Double> homework) {
         double scoreTotal = 0;
         
