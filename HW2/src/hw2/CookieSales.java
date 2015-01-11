@@ -45,27 +45,20 @@ public class CookieSales {
     public static double salesTotal(ArrayList<Integer> samoas, 
                 ArrayList<Integer> thinmints, ArrayList<Integer> chocochip) {
         
-        double finalTotal = 0;
+        double finalTotal =0;
         double sPrice = 4.00;
         double tPrice = 3.00;
         double cPrice = 5.00;
         double sTotal = 0;
         double tTotal = 0;
         double cTotal = 0;
-        
-        for(int i=0; i<samoas.size(); i++) {
-            sTotal = sPrice * samoas.get(i);
-        }
-        
-        for(int i=0; i<thinmints.size(); i++) {
-            tTotal = tPrice * thinmints.get(i);
-        }
-        
-        for(int i=0; i<chocochip.size(); i++) {
+       
+        for(int i=0; i<chocochip.size() && i<thinmints.size() && i<samoas.size(); i++) {
             cTotal = cPrice * chocochip.get(i);
+            sTotal = sPrice * samoas.get(i);
+            tTotal = tPrice * thinmints.get(i);
+            finalTotal += cTotal + sTotal + tTotal;
         }
-        
-        finalTotal = sTotal + tTotal + cTotal;
         
         return finalTotal;
     }
