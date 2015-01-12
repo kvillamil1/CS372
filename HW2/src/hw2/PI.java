@@ -20,6 +20,8 @@ public class PI {
         double pi = 4;
         int positive = -1;
         for (int i = 3; i < place; i += 2) {
+            //PT -- since the if and else case are almost the same, could you
+            //      get rid of them? Hint: -1^n is 1 if n is even, -1 if n is odd
             if (positive == 1) {
                 pi += 4.0 / i;
             } 

@@ -12,6 +12,8 @@ import java.util.*;
  */
 public class CookieSales {
     
+    //PT -- why make these static, instead of using three ArrayList
+    //      member variables, and adding values to them?
     public static int samoas(ArrayList<Integer> cookies) {
         int total = 0;
         

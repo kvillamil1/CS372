@@ -40,6 +40,9 @@ public class Gerbil {
     /**
      * Creates a list of gerbils; PR2_2 uses an iterator to step through.
      */
+    //PT -- This function and the makeMap function aren't really Gerbil
+    //      behaviors. They should be pulled out, into a separate
+    //      GerbilList or GerbilMap class. -2 on PR_2_1, -2 on PR2_3
     public static void makeList() {
         //PR2_1
         System.out.println("PR2_1: Gerbil ArrayList");
@@ -52,6 +55,8 @@ public class Gerbil {
         }
         System.out.print("\n");
         
+        //PT -- Again, this should be separate from the Gerbil, and even probably
+        //      from any GerbilList class you'd make. -2
         //PR2_2
         System.out.println("PR2_2: Gerbil Iterator");
         Iterator g = gerbils.iterator();
