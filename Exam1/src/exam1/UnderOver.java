@@ -7,7 +7,7 @@ package exam1;
 import java.util.*;
 
 /**
- *
+ *  Controls gameplay of the Under Over game.
  * @author Kat
  */
 public class UnderOver {
@@ -17,7 +17,11 @@ public class UnderOver {
     private static int money;
     private static int total;
     
-    
+    /**
+     * Assigns each die a random number between 1 and 6 and adds the two numbers
+     * together to create a sum.
+     * @return 
+     */
     public static int rollDice() {
         Random rand = new Random();
         dice1 = rand.nextInt(5)+1;
@@ -26,11 +30,20 @@ public class UnderOver {
         return diceSum;
     }
     
+    /**
+     * Sets money for a new user.
+     * @return 
+     */
     public static int setNewMoney() {
         money = 500;
         return money;
     }
     
+    /**
+     * Adjusts money if user bets that diceSum will be under 7.
+     * @param bet
+     * @return money
+     */
     public static int underSeven(int bet) {
         if(diceSum < 7)
             money = money + bet;
@@ -40,6 +53,11 @@ public class UnderOver {
         return money;
     }
     
+    /**
+     * Adjusts money if user bets that diceSum will be over 7.
+     * @param bet
+     * @return money
+     */
     public static int overSeven(int bet) {
         if(diceSum > 7)
             money = money + bet;
@@ -49,6 +67,11 @@ public class UnderOver {
         return money;
     }
     
+    /**
+     * Adjusts money if user bets that diceSum will equal 7.
+     * @param bet
+     * @return money
+     */
     public static int seven(int bet) {
         if(diceSum == 7)
             money = money + (bet*4);

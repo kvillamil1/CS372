@@ -7,7 +7,7 @@ package exam1;
 import java.util.*;
 
 /**
- *
+ * Runs UnderOver GUI
  * @author Kat
  */
 public class GUIgame extends javax.swing.JFrame {
@@ -182,6 +182,11 @@ public class GUIgame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * When the "Roll Dice!" button is pushed, a dice sum and win/lose prompt is shown; 
+     * The total money is adjusted depending on which radio button is selected and value of the bet.
+     * @param evt 
+     */
     private void RollActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RollActionPerformed
         // TODO add your handling code here:
         UnderOver.rollDice();
@@ -190,36 +195,38 @@ public class GUIgame extends javax.swing.JFrame {
         
         if(Under7.isEnabled()) {
             int c = Integer.parseInt(this.Bet_TF.getText());
-            UnderOver.underSeven(c);
             String f = String.valueOf(UnderOver.underSeven(c));
             Money.setText(f);
-            if((Integer.valueOf(UnderOver.rollDice())) < 7)
+            if(Integer.parseInt(s) < 7)
                 winlose.setText("You Win!");
             else
                 winlose.setText("You Lose!");
             
         } else if(Seven.isEnabled()) {
             int c = Integer.parseInt(this.Bet_TF.getText());
-            UnderOver.seven(c);
             String f = String.valueOf(UnderOver.seven(c));
             Money.setText(f);
-            if((Integer.valueOf(UnderOver.rollDice())) == 7)
+            if(Integer.parseInt(s) == 7)
                 winlose.setText("You Win!");
             else
                 winlose.setText("You Lose!");
         
         } else {
             int c = Integer.parseInt(this.Bet_TF.getText());
-            UnderOver.overSeven(c);
             String f = String.valueOf(UnderOver.overSeven(c));
             Money.setText(f);
-            if((Integer.valueOf(UnderOver.rollDice())) > 7)
+            if(Integer.parseInt(s) > 7)
                 winlose.setText("You Win!");
             else
                 winlose.setText("You Lose!");
         }
     }//GEN-LAST:event_RollActionPerformed
 
+    /**
+     * When "Submit" button is pushed, the username given in the text field is 
+     * added to a list.
+     * @param evt 
+     */
     private void SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitActionPerformed
         // TODO add your handling code here:
         userTrack.add(User_TF.getText());
@@ -227,13 +234,21 @@ public class GUIgame extends javax.swing.JFrame {
         Money.setText(s);
     }//GEN-LAST:event_SubmitActionPerformed
 
+    /**
+     * Tells program that the "Under 7" radio button is selected. 
+     * @param evt 
+     */
     private void Under7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Under7ActionPerformed
         // TODO add your handling code here:
         Under7.enable(true);
         Seven.enable(false);
         Over7.enable(false);
     }//GEN-LAST:event_Under7ActionPerformed
-
+    
+    /**
+     * Tells program that the "7" radio button is selected.
+     * @param evt 
+     */
     private void SevenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SevenActionPerformed
         // TODO add your handling code here:
         Seven.enable(true);
@@ -241,6 +256,10 @@ public class GUIgame extends javax.swing.JFrame {
         Over7.enable(false);
     }//GEN-LAST:event_SevenActionPerformed
 
+    /**
+     * Tells program that the "Over 7" radio button is selected.
+     * @param evt 
+     */
     private void Over7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Over7ActionPerformed
         // TODO add your handling code here:
         Over7.enable(true);

@@ -6,7 +6,7 @@
 package exam1;
 
 /**
- *
+ * Exam 1: Under Over Dice Game
  * @author Kat
  */
 public class Exam1 {
