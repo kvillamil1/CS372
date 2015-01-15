@@ -30,6 +30,8 @@ public class GUIgame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jDialog1 = new javax.swing.JDialog();
+        jLabel1 = new javax.swing.JLabel();
         Roll = new javax.swing.JButton();
         MoneyLabel = new javax.swing.JLabel();
         Money = new javax.swing.JLabel();
@@ -44,6 +46,28 @@ public class GUIgame extends javax.swing.JFrame {
         Seven = new javax.swing.JRadioButton();
         Submit = new javax.swing.JButton();
         winlose = new javax.swing.JLabel();
+
+        jDialog1.setResizable(false);
+        jDialog1.setSize(new java.awt.Dimension(150, 100));
+
+        jLabel1.setText("Bet must be an integer!");
+
+        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
+        jDialog1.getContentPane().setLayout(jDialog1Layout);
+        jDialog1Layout.setHorizontalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialog1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jDialog1Layout.setVerticalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialog1Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -110,43 +134,45 @@ public class GUIgame extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(59, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(UserLabel)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(MoneyLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Money, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(27, 27, 27)
-                                .addComponent(BetLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Bet_TF, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(Under7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(Seven)
-                                .addGap(18, 18, 18)
-                                .addComponent(Over7))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(User_TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(Submit)))))
-                .addGap(52, 52, 52))
+                .addContainerGap(54, Short.MAX_VALUE)
+                .addComponent(UserLabel)
+                .addGap(46, 46, 46))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(126, 126, 126)
                         .addComponent(Title))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(83, 83, 83)
+                        .addGap(80, 80, 80)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(winlose, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(DiceLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Roll, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(62, 62, 62)
+                .addComponent(Under7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Seven)
+                .addGap(18, 18, 18)
+                .addComponent(Over7)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(MoneyLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Money, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addComponent(BetLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Bet_TF, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(User_TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Submit)))
+                .addGap(71, 71, 71))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -159,7 +185,7 @@ public class GUIgame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(User_TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Submit))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(MoneyLabel)
                     .addComponent(Money)
@@ -170,13 +196,13 @@ public class GUIgame extends javax.swing.JFrame {
                     .addComponent(Under7)
                     .addComponent(Over7)
                     .addComponent(Seven))
-                .addGap(26, 26, 26)
+                .addGap(40, 40, 40)
                 .addComponent(DiceLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(winlose)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addComponent(Roll)
-                .addGap(30, 30, 30))
+                .addGap(22, 22, 22))
         );
 
         pack();
@@ -189,37 +215,41 @@ public class GUIgame extends javax.swing.JFrame {
      */
     private void RollActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RollActionPerformed
         // TODO add your handling code here:
-        UnderOver.rollDice();
-        String s = String.valueOf(UnderOver.rollDice());
-        DiceLabel.setText(s);
-        
-        if(Under7.isEnabled()) {
-            int c = Integer.parseInt(this.Bet_TF.getText());
-            String f = String.valueOf(UnderOver.underSeven(c));
-            Money.setText(f);
-            if(Integer.parseInt(s) < 7)
-                winlose.setText("You Win!");
-            else
-                winlose.setText("You Lose!");
-            
-        } else if(Seven.isEnabled()) {
-            int c = Integer.parseInt(this.Bet_TF.getText());
-            String f = String.valueOf(UnderOver.seven(c));
-            Money.setText(f);
-            if(Integer.parseInt(s) == 7)
-                winlose.setText("You Win!");
-            else
-                winlose.setText("You Lose!");
-        
-        } else {
-            int c = Integer.parseInt(this.Bet_TF.getText());
-            String f = String.valueOf(UnderOver.overSeven(c));
-            Money.setText(f);
-            if(Integer.parseInt(s) > 7)
-                winlose.setText("You Win!");
-            else
-                winlose.setText("You Lose!");
-        }
+        try {
+            UnderOver.rollDice();
+            String s = String.valueOf(UnderOver.rollDice());
+            DiceLabel.setText(s);
+
+            if(Under7.isEnabled()) {
+                int c = Integer.parseInt(this.Bet_TF.getText());
+                String f = String.valueOf(UnderOver.underSeven(c));
+                Money.setText(f);
+                if(Integer.parseInt(s) < 7)
+                    winlose.setText("You Win!");
+                else
+                    winlose.setText("You Lose!");
+
+            } else if(Seven.isEnabled()) {
+                int c = Integer.parseInt(this.Bet_TF.getText());
+                String f = String.valueOf(UnderOver.seven(c));
+                Money.setText(f);
+                if(Integer.parseInt(s) == 7)
+                    winlose.setText("You Win!");
+                else
+                    winlose.setText("You Lose!");
+
+            } else {
+                int c = Integer.parseInt(this.Bet_TF.getText());
+                String f = String.valueOf(UnderOver.overSeven(c));
+                Money.setText(f);
+                if(Integer.parseInt(s) > 7)
+                    winlose.setText("You Win!");
+                else
+                    winlose.setText("You Lose!");
+            }
+        } catch(NumberFormatException ex) {
+            jDialog1.show();
+            }
     }//GEN-LAST:event_RollActionPerformed
 
     /**
@@ -316,6 +346,8 @@ public class GUIgame extends javax.swing.JFrame {
     private javax.swing.JRadioButton Under7;
     private javax.swing.JLabel UserLabel;
     private javax.swing.JTextField User_TF;
+    private javax.swing.JDialog jDialog1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel winlose;
     // End of variables declaration//GEN-END:variables
 }
