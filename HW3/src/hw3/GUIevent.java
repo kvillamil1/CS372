@@ -5,12 +5,16 @@
  */
 package hw3;
 
+import java.util.*;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Kat
  */
 public class GUIevent extends javax.swing.JFrame {
-
+    
+    ArrayList<String> events = new ArrayList<String>();
     /**
      * Creates new form GUIevent
      */
@@ -28,79 +32,89 @@ public class GUIevent extends javax.swing.JFrame {
     private void initComponents() {
 
         Header = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        Table = new javax.swing.JTable();
-        Name_TextField = new javax.swing.JTextField();
-        Loc_TextField = new javax.swing.JTextField();
-        mm_TextField = new javax.swing.JTextField();
-        dd_TextField = new javax.swing.JTextField();
-        yy_TextField = new javax.swing.JTextField();
+        Name_TF = new javax.swing.JTextField();
+        Location_TF = new javax.swing.JTextField();
+        Month_TF = new javax.swing.JTextField();
+        Day_TF = new javax.swing.JTextField();
+        Year_TF = new javax.swing.JTextField();
         Button = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        Table = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         Header.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         Header.setText("Event Tracker");
 
+        Name_TF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Name_TF.setText("Enter Name");
+
+        Location_TF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Location_TF.setText("Enter Location");
+
+        Month_TF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Month_TF.setText("mm");
+
+        Day_TF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Day_TF.setText("dd");
+
+        Year_TF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Year_TF.setText("yyyy");
+
+        Button.setText("Submit");
+        Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonActionPerformed(evt);
+            }
+        });
+
         Table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
                 "Name", "Location", "Month", "Date", "Year"
             }
         ));
-        jScrollPane1.setViewportView(Table);
-
-        Name_TextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        Name_TextField.setText("Enter Name");
-
-        Loc_TextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        Loc_TextField.setText("Enter Location");
-
-        mm_TextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        mm_TextField.setText("mm");
-
-        dd_TextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        dd_TextField.setText("dd");
-
-        yy_TextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        yy_TextField.setText("yyyy");
-
-        Button.setText("Submit");
+        jScrollPane3.setViewportView(Table);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(Name_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(Loc_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(45, 45, 45)
-                                .addComponent(mm_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
-                                .addComponent(dd_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(75, 75, 75)
-                                .addComponent(yy_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(30, 30, 30))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(248, 248, 248)
-                                .addComponent(Button, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))))
+                        .addComponent(Name_TF, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(Location_TF, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(44, 44, 44)
+                        .addComponent(Month_TF, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
+                        .addComponent(Day_TF, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(75, 75, 75)
+                        .addComponent(Year_TF, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(36, 36, 36))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(277, 277, 277)
-                        .addComponent(Header)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(248, 248, 248)
+                        .addComponent(Button, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(277, 277, 277)
+                .addComponent(Header)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane3)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -109,21 +123,64 @@ public class GUIevent extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(Header, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Name_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Loc_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(mm_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(dd_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(yy_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Name_TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Location_TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Month_TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Day_TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Year_TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36)
                 .addComponent(Button)
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonActionPerformed
+        // TODO add your handling code here:
+        
+        try {
+        if (EventValidate.validate(Integer.parseInt(Month_TF.getText()),
+                Integer.parseInt(Day_TF.getText()),
+                Integer.parseInt(Year_TF.getText()))) {
+            DefaultTableModel model = (DefaultTableModel) Table.getModel();
+            model.addRow(new Object[]{Name_TF.getText().toString(),
+                Location_TF.getText().toString(), Month_TF.getText().toString(),
+                Day_TF.getText().toString(), Year_TF.getText().toString()});
+            
+            String event = Name_TF.getText().toString() + " " + 
+                    Location_TF.getText().toString() + " " + 
+                    Month_TF.getText().toString() + "/" + Day_TF.getText().toString()
+                    + "/" + Year_TF.getText().toString();
+            events.add(event);
+
+            Name_TF.setText("Enter Name");
+            Location_TF.setText("Enter Location");
+            Month_TF.setText("mm");
+            Day_TF.setText("dd");
+            Year_TF.setText("yyyy");
+        }
+        else
+            EventValidate.popup("Make sure you are entering a valid date!");
+        } catch(NumberFormatException ex) {
+            EventValidate.popup("Dates can only be entered as integers!");
+        }
+    }//GEN-LAST:event_ButtonActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+         DefaultTableModel model = (DefaultTableModel) Table.getModel();
+            model.addRow(EventTracker.loadEvent());
+    }//GEN-LAST:event_formWindowOpened
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        // TODO add your handling code here:
+        EventTracker.saveEvent(events);
+        EventValidate.popup("Entries Saved!");
+    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments
@@ -162,13 +219,14 @@ public class GUIevent extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Button;
+    private javax.swing.JTextField Day_TF;
     private javax.swing.JLabel Header;
-    private javax.swing.JTextField Loc_TextField;
-    private javax.swing.JTextField Name_TextField;
+    private javax.swing.JTextField Location_TF;
+    private javax.swing.JTextField Month_TF;
+    private javax.swing.JTextField Name_TF;
     private javax.swing.JTable Table;
-    private javax.swing.JTextField dd_TextField;
+    private javax.swing.JTextField Year_TF;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField mm_TextField;
-    private javax.swing.JTextField yy_TextField;
+    private javax.swing.JScrollPane jScrollPane3;
     // End of variables declaration//GEN-END:variables
 }
