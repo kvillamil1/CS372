@@ -8,11 +8,18 @@ import java.time.*;
 import javax.swing.*;
 
 /**
- *
+ * Validates event dates entered by user.
  * @author Kat
  */
 public class EventValidate {
 
+    /**
+     * Uses the java.time library to check if user-entered dates are valid.
+     * @param m month
+     * @param d day
+     * @param y year
+     * @return dateIsValid (boolean value)
+     */
     public static boolean validate(int m, int d, int y) {
         boolean dateIsValid = true;
         try {

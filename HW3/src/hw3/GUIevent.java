@@ -15,6 +15,7 @@ import javax.swing.table.DefaultTableModel;
 public class GUIevent extends javax.swing.JFrame {
     
     ArrayList<String> events = new ArrayList<String>();
+    
     /**
      * Creates new form GUIevent
      */
@@ -139,6 +140,11 @@ public class GUIevent extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * When "Submit" button is pressed, event that user input gets added into table.
+     * Exception used to handle invalid date entries.
+     * @param evt 
+     */
     private void ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonActionPerformed
         // TODO add your handling code here:
         
@@ -170,12 +176,22 @@ public class GUIevent extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_ButtonActionPerformed
 
+    /**
+     * Loads events into table when window is opened. **NOT WORKING (FILE CAN'T BE FOUND)
+     * @param evt 
+     */
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
-         DefaultTableModel model = (DefaultTableModel) Table.getModel();
-            model.addRow(EventTracker.loadEvent());
+         
+        //DefaultTableModel model = (DefaultTableModel) Table.getModel();
+        //model.addRow(EventTracker.loadEvent());
     }//GEN-LAST:event_formWindowOpened
 
+    /**
+     * Saves events when window is closed; 
+     * popup notifies user that events have been saved.
+     * @param evt 
+     */
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         // TODO add your handling code here:
         EventTracker.saveEvent(events);
