@@ -17,11 +17,12 @@ public class EventTracker {
      * @param events 
      */
     public static void saveEvent(ArrayList<String> events) {
-         File file = new File("Events.txt");
+         File file = new File("/Users/Kat/Documents/GitHub/CS372/HW3/Events.txt");
         try {
-            BufferedWriter wrtr = new BufferedWriter(new FileWriter(file));
+            BufferedWriter wrtr = new BufferedWriter(new FileWriter(file, true));
             for (int i = 0; i < events.size(); i++) {
-                wrtr.write(events.get(i) + "\n");
+                wrtr.write(events.get(i));
+                wrtr.newLine();
             }
 
             wrtr.close();
@@ -32,27 +33,25 @@ public class EventTracker {
     
     /**
      * Reads in an existing text file of events and places them into a vector for loading.
-     * **NOT WORKING (FILE CAN'T BE FOUND)
      * @return loaded_events (vector)
      * @throws FileNotFoundException 
      */
-    public static Vector<String> loadEvent() {
-        Vector<String> loaded_events = new Vector<String>();
+    public static Vector<Vector<String>> loadEvent() {
+        Vector<Vector<String>> loaded_events = new Vector<Vector<String>>();
         
-        File f = new File("Events.txt");
+        File f = new File("/Users/Kat/Documents/GitHub/CS372/HW3/Events.txt");
         String line;
-        String[] date;
-        String[] name_loc;
+        String[] event;
         try {
             BufferedReader rdr = new BufferedReader(new FileReader(f));
-
+            
             while ((line = rdr.readLine()) != null) {
-                name_loc = line.split(" ");
-                date = name_loc[2].split("/");
-                if (name_loc.length == 3) {
-                    String new_event = name_loc[0] + name_loc[1] + date[0] + date[1] + date[2];
-                    loaded_events.add(new_event);
+                event = line.split(",");
+                Vector<String> tmp = new Vector<String>();
+                for(int i=0; i<event.length; i++) {
+                    tmp.add(event[i]);
                 }
+                loaded_events.add(tmp);
 
             }
             rdr.close();

@@ -41,6 +41,7 @@ public class GUIevent extends javax.swing.JFrame {
         Button = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         Table = new javax.swing.JTable();
+        Sorting = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -87,35 +88,42 @@ public class GUIevent extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(Table);
 
+        Sorting.setText("** Click on column headers to sort events.");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(Name_TF, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(Location_TF, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(44, 44, 44)
-                        .addComponent(Month_TF, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
-                        .addComponent(Day_TF, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(75, 75, 75)
-                        .addComponent(Year_TF, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(36, 36, 36))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(277, 277, 277)
+                                .addComponent(Header))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(254, 254, 254)
+                                        .addComponent(Button, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(99, 99, 99)
+                                        .addComponent(Name_TF, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Location_TF, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(Month_TF, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(8, 8, 8)
+                                .addComponent(Day_TF, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Year_TF, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(12, 12, 12)
+                                .addComponent(Sorting)))
+                        .addGap(0, 111, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(248, 248, 248)
-                        .addComponent(Button, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(277, 277, 277)
-                .addComponent(Header)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane3)
+                        .addGap(6, 6, 6)
+                        .addComponent(jScrollPane3)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -125,16 +133,18 @@ public class GUIevent extends javax.swing.JFrame {
                 .addComponent(Header, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Sorting)
+                .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Name_TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Location_TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Month_TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Day_TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Year_TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addComponent(Button)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(21, 21, 21))
         );
 
         pack();
@@ -157,10 +167,10 @@ public class GUIevent extends javax.swing.JFrame {
                 Location_TF.getText().toString(), Month_TF.getText().toString(),
                 Day_TF.getText().toString(), Year_TF.getText().toString()});
             
-            String event = Name_TF.getText().toString() + " " + 
-                    Location_TF.getText().toString() + " " + 
-                    Month_TF.getText().toString() + "/" + Day_TF.getText().toString()
-                    + "/" + Year_TF.getText().toString();
+            String event = Name_TF.getText().toString() + "," + 
+                    Location_TF.getText().toString() + "," + 
+                    Month_TF.getText().toString() + "," + Day_TF.getText().toString()
+                    + "," + Year_TF.getText().toString();
             events.add(event);
 
             Name_TF.setText("Enter Name");
@@ -177,14 +187,18 @@ public class GUIevent extends javax.swing.JFrame {
     }//GEN-LAST:event_ButtonActionPerformed
 
     /**
-     * Loads events into table when window is opened. **NOT WORKING (FILE CAN'T BE FOUND)
+     * Loads events into table when window is opened.
      * @param evt 
      */
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
          
-        //DefaultTableModel model = (DefaultTableModel) Table.getModel();
-        //model.addRow(EventTracker.loadEvent());
+        DefaultTableModel model = (DefaultTableModel) Table.getModel();
+        Vector<Vector<String>> es = EventTracker.loadEvent();
+        for (Vector<String> e : es)
+            model.addRow(e);
+        
+        Table.setAutoCreateRowSorter(true);
     }//GEN-LAST:event_formWindowOpened
 
     /**
@@ -195,7 +209,7 @@ public class GUIevent extends javax.swing.JFrame {
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         // TODO add your handling code here:
         EventTracker.saveEvent(events);
-        EventValidate.popup("Entries Saved!");
+        EventValidate.popup("Any new entries have been saved!");
     }//GEN-LAST:event_formWindowClosing
 
     /**
@@ -240,9 +254,9 @@ public class GUIevent extends javax.swing.JFrame {
     private javax.swing.JTextField Location_TF;
     private javax.swing.JTextField Month_TF;
     private javax.swing.JTextField Name_TF;
+    private javax.swing.JLabel Sorting;
     private javax.swing.JTable Table;
     private javax.swing.JTextField Year_TF;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     // End of variables declaration//GEN-END:variables
 }
