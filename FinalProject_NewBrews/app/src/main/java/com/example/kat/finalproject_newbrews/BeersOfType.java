@@ -47,7 +47,7 @@ public class BeersOfType extends ActionBarActivity {
 
     public void buttonOnClick(View v) {
         Button b = (Button) v;
-        Toast.makeText(this, b.getText(), Toast.LENGTH_LONG).show();
+        startActivity(new Intent(getApplicationContext(), BeerInfo.class));
     }
 
 
