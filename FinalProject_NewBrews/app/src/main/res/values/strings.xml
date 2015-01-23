@@ -6,5 +6,8 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_latest_releases">LatestReleases</string>
     <string name="title_activity_bars_restaurants">Bars/Restaurants</string>
+    <string name="title_activity_beer_info">BeerInfo</string>
+    <string name="title_activity_bar_res_page">Bar/RestaurantPage</string>
+    <string name="title_activity_beers_of_type">BeersOfType</string>
 
 </resources>

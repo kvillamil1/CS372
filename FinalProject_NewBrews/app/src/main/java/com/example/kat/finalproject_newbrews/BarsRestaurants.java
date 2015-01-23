@@ -1,5 +1,6 @@
 package com.example.kat.finalproject_newbrews;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -47,7 +48,7 @@ public class BarsRestaurants extends ActionBarActivity {
 
     public void buttonOnClick(View v) {
         Button b = (Button) v;
-        Toast.makeText(this, b.getText(), Toast.LENGTH_LONG).show();
+        startActivity(new Intent(getApplicationContext(), BarResPage.class));
     }
 
 

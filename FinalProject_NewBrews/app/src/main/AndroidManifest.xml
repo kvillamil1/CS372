@@ -28,6 +28,18 @@
             android:name=".BarsRestaurants"
             android:label="@string/title_activity_bars_restaurants" >
         </activity>
+        <activity
+            android:name=".BeerInfo"
+            android:label="@string/title_activity_beer_info" >
+        </activity>
+        <activity
+            android:name=".BarResPage"
+            android:label="@string/title_activity_bar_res_page" >
+        </activity>
+        <activity
+            android:name=".BeersOfType"
+            android:label="@string/title_activity_beers_of_type" >
+        </activity>
     </application>
 
 </manifest>

@@ -11,14 +11,14 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 
-public class TypesofBeer extends ActionBarActivity {
+public class BeersOfType extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_types_beer);
+        setContentView(R.layout.activity_beers_of_type);
 
-        LinearLayout l = (LinearLayout) this.findViewById(R.id.tbLayout);
+        LinearLayout l = (LinearLayout) this.findViewById(R.id.botLayout);
 
         try {
             for (int i = 0; i < 9; i++) {
@@ -47,14 +47,14 @@ public class TypesofBeer extends ActionBarActivity {
 
     public void buttonOnClick(View v) {
         Button b = (Button) v;
-        startActivity(new Intent(getApplicationContext(), BeersOfType.class));
+        Toast.makeText(this, b.getText(), Toast.LENGTH_LONG).show();
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_latest_releases, menu);
+        getMenuInflater().inflate(R.menu.menu_beers_of_type, menu);
         return true;
     }
 
