@@ -12,13 +12,15 @@
         android:id="@+id/latestLinearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical">
         <ImageView
             android:layout_width="55dp"
             android:layout_height="50dp"
             android:id="@+id/imageView71"
             android:background="@drawable/logo"
-            android:padding="2dp" />
+            android:padding="2dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="5dp" />
 
     </LinearLayout>
 

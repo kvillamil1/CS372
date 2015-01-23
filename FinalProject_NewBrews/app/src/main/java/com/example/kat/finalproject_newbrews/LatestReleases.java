@@ -1,6 +1,8 @@
 package com.example.kat.finalproject_newbrews;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -24,10 +26,12 @@ public class LatestReleases extends ActionBarActivity {
             for (int i = 0; i < 9; i++) {
                 Button b = new Button(this);
                 b.setText(String.format("Button %d", i));
+                b.setTextColor(Color.WHITE);
+                b.setBackground(getResources().getDrawable(R.drawable.listbutton));
                 LinearLayout.LayoutParams lp =
                         new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
                                 LinearLayout.LayoutParams.WRAP_CONTENT);
-                lp.setMargins(10, 10, 10, 10);
+                lp.setMargins(0, 0, 0, 0);
                 b.setLayoutParams(lp);
 
                 b.setOnClickListener(new Button.OnClickListener() {
