@@ -9,7 +9,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 
 public class BeersOfType extends ActionBarActivity {
@@ -50,7 +49,7 @@ public class BeersOfType extends ActionBarActivity {
 
     public void buttonOnClick(View v) {
         Button b = (Button) v;
-        startActivity(new Intent(getApplicationContext(), BeerInfo.class));
+        startActivity(new Intent(getApplicationContext(), BeerInfo2.class));
     }
 
 
@@ -61,6 +60,15 @@ public class BeersOfType extends ActionBarActivity {
         return true;
     }
 
+    public void beertypehomeOnClick(View v) {
+        Button b = (Button) v;
+        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+    }
+
+    public void beertypebackOnClick(View v) {
+        Button b = (Button) v;
+        startActivity(new Intent(getApplicationContext(), TypesofBeer.class));
+    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will

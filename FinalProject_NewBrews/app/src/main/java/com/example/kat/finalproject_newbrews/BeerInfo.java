@@ -1,9 +1,12 @@
 package com.example.kat.finalproject_newbrews;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 
 public class BeerInfo extends ActionBarActivity {
@@ -20,6 +23,16 @@ public class BeerInfo extends ActionBarActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_beer_info, menu);
         return true;
+    }
+
+    public void beerinfohomeOnClick(View v) {
+        Button b = (Button) v;
+        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+    }
+
+    public void beerinfobackOnClick(View v) {
+        Button b = (Button) v;
+        startActivity(new Intent(getApplicationContext(), LatestReleases.class));
     }
 
     @Override

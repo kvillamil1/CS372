@@ -9,5 +9,7 @@
     <string name="title_activity_beer_info">BeerInfo</string>
     <string name="title_activity_bar_res_page">Bar/RestaurantPage</string>
     <string name="title_activity_beers_of_type">BeersOfType</string>
+    <string name="title_activity_beer_info_tb">BeerInfoTB</string>
+    <string name="title_activity_beer_info2">BeerInfo2</string>
 
 </resources>

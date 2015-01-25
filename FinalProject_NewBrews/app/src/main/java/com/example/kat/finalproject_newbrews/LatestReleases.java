@@ -2,7 +2,6 @@ package com.example.kat.finalproject_newbrews;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -10,7 +9,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 
 public class LatestReleases extends ActionBarActivity {
@@ -60,6 +58,16 @@ public class LatestReleases extends ActionBarActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_latest_releases, menu);
         return true;
+    }
+
+    public void latesthomeOnClick(View v) {
+        Button b = (Button) v;
+        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+    }
+
+    public void latestbackOnClick(View v) {
+        Button b = (Button) v;
+        startActivity(new Intent(getApplicationContext(), MainActivity.class));
     }
 
     @Override

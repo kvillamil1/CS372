@@ -61,6 +61,16 @@ public class TypesofBeer extends ActionBarActivity {
         return true;
     }
 
+    public void typebeerhomeOnClick(View v) {
+        Button b = (Button) v;
+        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+    }
+
+    public void typebeerbackOnClick(View v) {
+        Button b = (Button) v;
+        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will

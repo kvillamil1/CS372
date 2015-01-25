@@ -9,30 +9,30 @@ import android.view.View;
 import android.widget.Button;
 
 
-public class BarResPage extends ActionBarActivity {
+public class BeerInfo2 extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bar_res_page);
+        setContentView(R.layout.activity_beer_info2);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_bar_res_page, menu);
+        getMenuInflater().inflate(R.menu.menu_beer_info2, menu);
         return true;
     }
 
-    public void brhomeOnClick(View v) {
+    public void beerinfo2homeOnClick(View v) {
         Button b = (Button) v;
         startActivity(new Intent(getApplicationContext(), MainActivity.class));
     }
 
-    public void brbackOnClick(View v) {
+    public void beerinfo2backOnClick(View v) {
         Button b = (Button) v;
-        startActivity(new Intent(getApplicationContext(), BarsRestaurants.class));
+        startActivity(new Intent(getApplicationContext(), BeersOfType.class));
     }
 
     @Override

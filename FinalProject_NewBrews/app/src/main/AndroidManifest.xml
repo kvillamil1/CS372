@@ -40,6 +40,10 @@
             android:name=".BeersOfType"
             android:label="@string/title_activity_beers_of_type" >
         </activity>
+        <activity
+            android:name=".BeerInfo2"
+            android:label="@string/title_activity_beer_info2" >
+        </activity>
     </application>
 
 </manifest>
