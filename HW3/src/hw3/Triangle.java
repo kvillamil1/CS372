@@ -15,7 +15,7 @@ public class Triangle extends Shape {
     private int s3 = 0;
     
     public Triangle(ArrayList<Integer> triList) {
-        
+        //PT -- check for args <= 0 -3
         if(triList.get(0)+triList.get(1)<= triList.get(2) || triList.get(1)+triList.get(2)<= triList.get(0) || triList.get(0)+triList.get(2)<=triList.get(1)) {
             System.out.println("This is not a valid triangle.\n");
             throw new IllegalArgumentException();

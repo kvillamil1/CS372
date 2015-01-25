@@ -17,6 +17,8 @@ public class UserInputMath {
      * @return Collections.min(intList)
      */
     public static int min(ArrayList<Integer> intList) {
+        //PT -- You've take data structures. Sort is O()? Is there a
+        // more efficient way?
         Collections.sort(intList);
         return Collections.min(intList);
     }

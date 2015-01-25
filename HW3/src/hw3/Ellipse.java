@@ -17,6 +17,7 @@ public class Ellipse extends Shape {
     private int rHeight;
     
     public Ellipse(ArrayList<Integer> ellList) {
+        //PT -- <= 0
         if(ellList.get(0) == 0 || ellList.get(1) == 0){
             System.out.println("This is not a valid Ellipse.\n");
             throw new IllegalArgumentException();

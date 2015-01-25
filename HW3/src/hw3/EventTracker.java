@@ -17,7 +17,8 @@ public class EventTracker {
      * @param events 
      */
     public static void saveEvent(ArrayList<String> events) {
-         File file = new File("/Users/Kat/Documents/GitHub/CS372/HW3/Events.txt");
+        //PT -- don't need full file path
+         File file = new File("Events.txt");
         try {
             BufferedWriter wrtr = new BufferedWriter(new FileWriter(file, true));
             for (int i = 0; i < events.size(); i++) {
@@ -39,7 +40,7 @@ public class EventTracker {
     public static Vector<Vector<String>> loadEvent() {
         Vector<Vector<String>> loaded_events = new Vector<Vector<String>>();
         
-        File f = new File("/Users/Kat/Documents/GitHub/CS372/HW3/Events.txt");
+        File f = new File("Events.txt");
         String line;
         String[] event;
         try {
