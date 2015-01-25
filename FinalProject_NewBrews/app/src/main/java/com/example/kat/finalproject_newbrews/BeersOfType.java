@@ -10,6 +10,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import java.net.URL;
+
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
+
 
 public class BeersOfType extends ActionBarActivity {
 
@@ -18,10 +23,13 @@ public class BeersOfType extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_beers_of_type);
 
+
         LinearLayout l = (LinearLayout) this.findViewById(R.id.botLayout);
 
         try {
-            for (int i = 0; i < 9; i++) {
+
+
+            for (int i = 0; i <3; i++) {
                 Button b = new Button(this);
                 b.setText(String.format("Button %d", i));
                 b.setTextColor(Color.WHITE);
