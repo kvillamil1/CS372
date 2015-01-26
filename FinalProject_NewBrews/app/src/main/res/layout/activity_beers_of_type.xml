@@ -8,7 +8,8 @@
     tools:context="com.example.kat.finalproject_newbrews.BeersOfType"
     android:background="#ff000000"
     android:columnCount="1"
-    android:columnOrderPreserved="false">
+    android:columnOrderPreserved="false"
+    android:rowOrderPreserved="false">
 
     <LinearLayout
         android:id="@+id/latestLinearLayout"
