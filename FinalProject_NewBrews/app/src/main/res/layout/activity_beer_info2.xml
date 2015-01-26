@@ -30,9 +30,9 @@
 
     <RelativeLayout>
         <Button
-            android:layout_width="27dp"
-            android:layout_height="29dp"
-            android:background="@drawable/navhome"
+            android:layout_width="34dp"
+            android:layout_height="32dp"
+            android:background="@drawable/navhomefinal"
             android:id="@+id/button"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@+id/button2"
@@ -42,9 +42,9 @@
             android:nestedScrollingEnabled="false" />
 
         <Button
-            android:layout_width="27dp"
-            android:layout_height="29dp"
-            android:background="@drawable/navbackward"
+            android:layout_width="30dp"
+            android:layout_height="32dp"
+            android:background="@drawable/navbackfinal"
             android:layout_alignTop="@+id/button"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="false"
