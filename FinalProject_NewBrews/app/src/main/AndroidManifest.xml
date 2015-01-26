@@ -11,12 +11,12 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" >
+            android:label="New Brews" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,31 +25,31 @@
         </activity>
         <activity
             android:name=".TypesofBeer"
-            android:label="@string/title_activity_latest_releases" >
+            android:label="Beer Type" >
         </activity>
         <activity
             android:name=".LatestReleases"
-            android:label="@string/title_activity_latest_releases" >
+            android:label="Latest Releases" >
         </activity>
         <activity
             android:name=".BarsRestaurants"
-            android:label="@string/title_activity_bars_restaurants" >
+            android:label="Bars &amp; Resturants" >
         </activity>
         <activity
             android:name=".BeerInfo"
-            android:label="@string/title_activity_beer_info" >
+            android:label="Beer" >
         </activity>
         <activity
             android:name=".BarResPage"
-            android:label="@string/title_activity_bar_res_page" >
+            android:label="Bars &amp; Resturants" >
         </activity>
         <activity
             android:name=".BeersOfType"
-            android:label="@string/title_activity_beers_of_type" >
+            android:label="Beer Type" >
         </activity>
         <activity
             android:name=".BeerInfo2"
-            android:label="@string/title_activity_beer_info2" >
+            android:label="Beer" >
         </activity>
 
     </application>
