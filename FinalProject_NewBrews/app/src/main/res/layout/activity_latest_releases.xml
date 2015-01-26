@@ -16,14 +16,16 @@
         android:id="@+id/latestLinearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:gravity="center">
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageView7"
         android:background="@drawable/logo"
         android:padding="2dp"
-        android:layout_marginBottom="5dp" />
+        android:layout_marginBottom="5dp"
+        android:layout_gravity="top" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -32,7 +34,8 @@
         android:background="@drawable/releasebutton"
         android:layout_marginTop="15dp"
         android:padding="2dp"
-        android:layout_marginBottom="5dp" />
+        android:layout_marginBottom="5dp"
+        android:layout_gravity="top" />
 
     </LinearLayout>
 
@@ -54,19 +57,19 @@
         android:layout_column="0">
 
         <Button
-            android:layout_width="34dp"
-            android:layout_height="32dp"
+            android:layout_width="39dp"
+            android:layout_height="37dp"
             android:background="@drawable/navhomefinal"
             android:id="@+id/button"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@+id/button2"
             android:layout_toEndOf="@+id/button2"
-            android:layout_marginLeft="15dp"
+            android:layout_marginLeft="10dp"
             android:onClick="latesthomeOnClick" />
 
         <Button
-            android:layout_width="30dp"
-            android:layout_height="32dp"
+            android:layout_width="35dp"
+            android:layout_height="37dp"
             android:background="@drawable/navbackfinal"
             android:layout_alignTop="@+id/button"
             android:layout_alignParentLeft="true"
