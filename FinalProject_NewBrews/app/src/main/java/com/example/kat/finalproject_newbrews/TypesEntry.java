@@ -19,6 +19,10 @@ public class TypesEntry {
     {
         return _Craft_Type_Name;
     }
+    public String getTypeID()
+    {
+        return _Craft_Type_ID;
+    }
 
 
 }

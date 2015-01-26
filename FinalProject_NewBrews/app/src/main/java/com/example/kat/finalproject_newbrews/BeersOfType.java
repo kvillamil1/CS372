@@ -2,6 +2,9 @@ package com.example.kat.finalproject_newbrews;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -22,37 +25,56 @@ public class BeersOfType extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_beers_of_type);
+        Bundle bn = getIntent().getExtras();
+        final int idtemp = bn.getInt("idtype");
+        final String idvalue = Integer.toString(idtemp);
+        Runnable r = new Runnable() {
+            @Override
+            public void run() {
+                try {
+
+                    URL url = new URL("http://cs1.whitworth.edu/nbrews/NBrewerys.php?TypeBeerID=" + idvalue);
+
+                    SAXParserFactory factory = SAXParserFactory.newInstance();
+                    SAXParser parser = factory.newSAXParser();
+                    final BeerEntryHandler handler = new BeerEntryHandler();
+                    parser.parse(url.openStream(), handler);
 
 
-        LinearLayout l = (LinearLayout) this.findViewById(R.id.botLayout);
+                    final Handler h = new Handler(Looper.getMainLooper()) {
+                        @Override
+                        public void handleMessage(Message m) {
+                            LinearLayout l = (LinearLayout) BeersOfType.this.findViewById(R.id.botLayout);
+                            for (int i = 0; i < handler.get_entries().size(); i++) {
+                                Button b = new Button(BeersOfType.this);
+                                String n = handler.get_entries().get(i).get_Craft_Beer_Name();
+                                b.setText(n);
+                                b.setTextColor(Color.WHITE);
+                                b.setBackground(getResources().getDrawable(R.drawable.listbutton));
+                                LinearLayout.LayoutParams lp =
+                                        new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
+                                                LinearLayout.LayoutParams.WRAP_CONTENT);
+                                lp.setMargins(0, 0, 0, 0);
+                                b.setLayoutParams(lp);
 
-        try {
+                                b.setOnClickListener(new Button.OnClickListener() {
+                                    public void onClick(View v) {
+                                        buttonOnClick(v);
+                                    }
+                                });
 
+                                l.addView(b);
+                            }
+                        }
+                    };
+                    h.obtainMessage().sendToTarget();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
 
-            for (int i = 0; i <3; i++) {
-                Button b = new Button(this);
-                b.setText(String.format("Button %d", i));
-                b.setTextColor(Color.WHITE);
-                b.setBackground(getResources().getDrawable(R.drawable.listbutton));
-                LinearLayout.LayoutParams lp =
-                        new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
-                                LinearLayout.LayoutParams.WRAP_CONTENT);
-                lp.setMargins(0, 0, 0, 0);
-                b.setLayoutParams(lp);
-
-                b.setOnClickListener(new Button.OnClickListener() {
-                    public void onClick(View v) {
-                        buttonOnClick(v);
-                    }
-                });
-
-                l.addView(b);
             }
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
+        };
+        new Thread(r).start();
     }
 
     public void buttonOnClick(View v) {
@@ -77,6 +99,7 @@ public class BeersOfType extends ActionBarActivity {
         Button b = (Button) v;
         startActivity(new Intent(getApplicationContext(), TypesofBeer.class));
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
