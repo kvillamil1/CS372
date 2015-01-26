@@ -2,6 +2,9 @@ package com.example.kat.finalproject_newbrews;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,6 +15,10 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import java.net.URL;
+
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
 
 
 public class BarsRestaurants extends ActionBarActivity {
@@ -22,31 +29,53 @@ public class BarsRestaurants extends ActionBarActivity {
         setContentView(R.layout.activity_bars_restaurants);
         LinearLayout l = (LinearLayout) this.findViewById(R.id.brlayout);
 
-        try {
-            for (int i = 0; i < 9; i++) {
-                Button b = new Button(this);
-                b.setText(String.format("Button %d", i));
-                b.setTextColor(Color.WHITE);
-                b.setBackground(getResources().getDrawable(R.drawable.listbutton));
-                LinearLayout.LayoutParams lp =
-                        new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
-                                LinearLayout.LayoutParams.WRAP_CONTENT);
-                lp.setMargins(0, 0, 0, 0);
-                b.setLayoutParams(lp);
+        Runnable r = new Runnable() {
+            @Override
+            public void run() {
+                try {
 
-                b.setOnClickListener(new Button.OnClickListener() {
-                    public void onClick(View v) {
-                        buttonOnClick(v);
-                    }
-                });
+                    URL url = new URL("http://cs1.whitworth.edu/nbrews/NBrewerys.php");
 
-                l.addView(b);
+                    SAXParserFactory factory = SAXParserFactory.newInstance();
+                    SAXParser parser = factory.newSAXParser();
+                    final RestEntryHandler handler = new RestEntryHandler();
+                    parser.parse(url.openStream(), handler);
+
+
+                    final Handler h = new Handler(Looper.getMainLooper()) {
+                        @Override
+                        public void handleMessage(Message m) {
+                            LinearLayout l = (LinearLayout) BarsRestaurants.this.findViewById(R.id.brlayout);
+                            for (int i = 0; i < handler.get_types().size(); i++) {
+                                Button b = new Button(BarsRestaurants.this);
+                                String n = handler.get_types().get(i).getTypeName();
+                                b.setText(n);
+                                b.setTextColor(Color.WHITE);
+                                b.setBackground(getResources().getDrawable(R.drawable.listbutton));
+                                LinearLayout.LayoutParams lp =
+                                        new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
+                                                LinearLayout.LayoutParams.WRAP_CONTENT);
+                                lp.setMargins(0, 0, 0, 0);
+                                b.setLayoutParams(lp);
+
+                                b.setOnClickListener(new Button.OnClickListener() {
+                                    public void onClick(View v) {
+                                        buttonOnClick(v);
+                                    }
+                                });
+
+                                l.addView(b);
+                            }
+                        }
+                    };
+                    h.obtainMessage().sendToTarget();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
             }
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
+        };
+        new Thread(r).start();
     }
 
     public void buttonOnClick(View v) {
