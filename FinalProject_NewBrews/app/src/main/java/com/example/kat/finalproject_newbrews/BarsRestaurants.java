@@ -89,6 +89,7 @@ public class BarsRestaurants extends ActionBarActivity {
 
     /**
      * OnClick function for buttons (opens corresponding Bar/Restaurant Info page)
+     *
      * @param v
      */
     public void buttonOnClick(View v) {
@@ -110,6 +111,7 @@ public class BarsRestaurants extends ActionBarActivity {
 
     /**
      * OnClick function for home button on page (pulls up home screen)
+     *
      * @param v
      */
     public void barreshomeOnClick(View v) {
@@ -119,6 +121,7 @@ public class BarsRestaurants extends ActionBarActivity {
 
     /**
      * OnClick function for back button on page (pulls up previous screen)
+     *
      * @param v
      */
     public void barresbackOnClick(View v) {

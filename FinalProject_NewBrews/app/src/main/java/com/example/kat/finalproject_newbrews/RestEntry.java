@@ -27,16 +27,37 @@ public class RestEntry {
         _Rest_Zip = RZip;
     }
 
-    public String getRestID() {return  _Rest_ID_Num; }
+    public String getRestID() {
+        return _Rest_ID_Num;
+    }
+
     public String getTypeName() {
         return _Rest_Name;
     }
-    public String getRestPhone() {return _Rest_Phone; }
-    public String getRestAddress() {return _Rest_Address; }
-    public String getRestCity() {return _Rest_City; }
-    public String getRestState() {return _Rest_State; }
-    public String getRestDescription() {return _Rest_Description; }
-    public String getRestZip() {return _Rest_Zip; }
+
+    public String getRestPhone() {
+        return _Rest_Phone;
+    }
+
+    public String getRestAddress() {
+        return _Rest_Address;
+    }
+
+    public String getRestCity() {
+        return _Rest_City;
+    }
+
+    public String getRestState() {
+        return _Rest_State;
+    }
+
+    public String getRestDescription() {
+        return _Rest_Description;
+    }
+
+    public String getRestZip() {
+        return _Rest_Zip;
+    }
 
 
 }

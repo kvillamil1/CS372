@@ -54,6 +54,7 @@ public class BeersOfType extends ActionBarActivity {
                             LinearLayout l = (LinearLayout) BeersOfType.this.findViewById(R.id.botLayout);
                             for (int i = 0; i < handler.get_entries().size(); i++) {
                                 Button b = new Button(BeersOfType.this);
+                                b.setId(Integer.parseInt(handler.get_entries().get(i).get_Craft_Beer_ID()));
                                 String n = handler.get_entries().get(i).get_Craft_Beer_Name();
                                 b.setText(n);
                                 b.setTextColor(Color.WHITE);
@@ -86,11 +87,15 @@ public class BeersOfType extends ActionBarActivity {
 
     /**
      * OnClick function for buttons (opens corresponding Beer Info page)
+     *
      * @param v
      */
     public void buttonOnClick(View v) {
         Button b = (Button) v;
-        startActivity(new Intent(getApplicationContext(), BeerInfo2.class));
+        //startActivity(new Intent(getApplicationContext(), BeerInfo2.class));
+        Intent intent = new Intent(getApplicationContext(), BeerInfo2.class);
+        intent.putExtra("idbeer2", b.getId());
+        startActivity(intent);
     }
 
 
@@ -103,6 +108,7 @@ public class BeersOfType extends ActionBarActivity {
 
     /**
      * OnClick function for home button on page (pulls up home screen)
+     *
      * @param v
      */
     public void beertypehomeOnClick(View v) {
@@ -112,6 +118,7 @@ public class BeersOfType extends ActionBarActivity {
 
     /**
      * OnClick function for back button on page (pulls up previous screen)
+     *
      * @param v
      */
     public void beertypebackOnClick(View v) {

@@ -29,24 +29,27 @@ public class MainActivity extends ActionBarActivity {
 
     /**
      * onClick function for Latest Releases button (pulls up Latest Releases page)
+     *
      * @param v
      */
     public void latestOnClick(View v) {
         Button typeButton = (Button) v;
-        startActivity(new Intent(getApplicationContext(),LatestReleases.class));
+        startActivity(new Intent(getApplicationContext(), LatestReleases.class));
     }
 
     /**
      * onClick function for Types of Beers button (pulls up Types of Beers page)
+     *
      * @param v
      */
     public void typeOnClick(View v) {
         Button typeButton = (Button) v;
-        startActivity(new Intent(getApplicationContext(),TypesofBeer.class));
+        startActivity(new Intent(getApplicationContext(), TypesofBeer.class));
     }
 
     /**
      * onClick function for Bars/Restaurants button (pulls up Bars/Restaurants main page)
+     *
      * @param v
      */
     public void barOnClick(View v) {

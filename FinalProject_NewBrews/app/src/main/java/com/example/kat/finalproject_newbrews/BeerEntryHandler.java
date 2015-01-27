@@ -2,6 +2,7 @@ package com.example.kat.finalproject_newbrews;
 
 import org.xml.sax.helpers.DefaultHandler;
 import org.xml.sax.Attributes;
+
 import java.util.ArrayList;
 
 /**
@@ -21,20 +22,17 @@ public class BeerEntryHandler extends DefaultHandler {
 
     private String _data;
 
-    public ArrayList<BeerEntry> get_entries()
-    {
+    public ArrayList<BeerEntry> get_entries() {
         return _entries;
     }
 
     @Override
-    public void startElement(String uri, String localName, String qName, Attributes attributes)
-    {
+    public void startElement(String uri, String localName, String qName, Attributes attributes) {
         _data = "";
     }
 
     @Override
-    public void characters(char[] ch, int start, int length)
-    {
+    public void characters(char[] ch, int start, int length) {
         _data = _data + new String(ch, start, length);
     }
 
@@ -46,23 +44,19 @@ public class BeerEntryHandler extends DefaultHandler {
             _Craft_Beer_Name = _data;
         else if (qName.equals("ACraftABV"))
             _Craft_Beer_ABV = _data;
-        else if (qName.equals("ACraftDescrip"))
+        else if (qName.equals("ACraftDescription"))
             _Craft_Beer_Description = _data;
         else if (qName.equals("ABeerTypeID"))
             _Craft_Beer_Type = _data;
-        else if (qName.equals("ABrewerID")) {
+        else if (qName.equals("ABrewerName")) {
             _Craft_Beer_Brewer = _data;
         } else if (qName.equals("ABrewRelease")) {
             _Craft_Beer_BrewRelease = _data;
-        }
-        else if(qName.equals("beer"))
-        {
+        } else if (qName.equals("beer")) {
             _entries.add(new BeerEntry(_Craft_Beer_ID, _Craft_Beer_Name, _Craft_Beer_ABV, _Craft_Beer_Description,
-                    _Craft_Beer_Type, _Craft_Beer_Brewer, _Craft_Beer_BrewRelease));
+                    _Craft_Beer_BrewRelease, _Craft_Beer_Type, _Craft_Beer_Brewer));
         }
     }
-
-
 
 
 }

@@ -14,11 +14,8 @@ public class BeerEntry {
     private String _Craft_Beer_Brewer;
 
 
-
-
     public BeerEntry(String id, String Beer_Name, String ABV, String Beer_Description, String BrewRelease,
-                     String Beer_Type, String Beer_Brewer )
-    {
+                     String Beer_Type, String Beer_Brewer) {
         _Craft_Beer_ID = id;
         _Craft_Beer_Name = Beer_Name;
         _Craft_Beer_ABV = ABV;
@@ -29,9 +26,28 @@ public class BeerEntry {
     }
 
 
-    public String get_Craft_Beer_Name()
-    {
+    public String get_Craft_Beer_Name() {
         return _Craft_Beer_Name;
+    }
+
+    public String get_Craft_Beer_ID() {
+        return _Craft_Beer_ID;
+    }
+
+    public String get_Craft_Beer_ABV() {
+        return _Craft_Beer_ABV;
+    }
+
+    public String get_Craft_Beer_Description() {
+        return _Craft_Beer_Description;
+    }
+
+    public String get_Craft_Beer_BrewRelease() {
+        return _Craft_Beer_BrewRelease;
+    }
+
+    public String get_Craft_Beer_Brewer() {
+        return _Craft_Beer_Brewer;
     }
 
 

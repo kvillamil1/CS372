@@ -57,24 +57,23 @@ public class BarResPage extends ActionBarActivity {
                             rname.setText(name);
 
 
-
                             String pnum = handler.get_types().get(0).getRestPhone();
-                            String num = String.format("%s.%s.%s", pnum.substring(0,3), pnum.substring(3,6),
-                                    pnum.substring(6,10));
+                            String num = String.format("%s.%s.%s", pnum.substring(0, 3), pnum.substring(3, 6),
+                                    pnum.substring(6, 10));
                             TextView rphone = (TextView) BarResPage.this.findViewById(R.id.phone);
                             rphone.setText(num);
 
 
                             String formraddress = handler.get_types().get(0).getRestAddress() + " "
                                     + handler.get_types().get(0).getRestCity() + ", "
-                                    +handler.get_types().get(0).getRestState() + " "
-                                    +handler.get_types().get(0).getRestZip();
+                                    + handler.get_types().get(0).getRestState() + " "
+                                    + handler.get_types().get(0).getRestZip();
                             TextView raddress = (TextView) BarResPage.this.findViewById(R.id.address);
                             raddress.setText(formraddress);
 
 
                             String descrip = handler.get_types().get(0).getRestDescription();
-                            TextView rdescription= (TextView) BarResPage.this.findViewById(R.id.description);
+                            TextView rdescription = (TextView) BarResPage.this.findViewById(R.id.description);
                             rdescription.setText(descrip);
 
                         }
@@ -101,6 +100,7 @@ public class BarResPage extends ActionBarActivity {
 
     /**
      * OnClick function for home button on page (pulls up home screen)
+     *
      * @param v
      */
     public void brhomeOnClick(View v) {
@@ -110,6 +110,7 @@ public class BarResPage extends ActionBarActivity {
 
     /**
      * OnClick function for back button on page (pulls up previous screen)
+     *
      * @param v
      */
     public void brbackOnClick(View v) {

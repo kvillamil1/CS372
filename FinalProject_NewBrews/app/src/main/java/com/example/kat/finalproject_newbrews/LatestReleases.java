@@ -33,62 +33,68 @@ public class LatestReleases extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_latest_releases);
 
-            Runnable r = new Runnable() {
-                @Override
-                public void run() {
-                    try {
+        Runnable r = new Runnable() {
+            @Override
+            public void run() {
+                try {
 
-                        URL url = new URL("http://cs1.whitworth.edu/nbrews/NBrewerys.php?Linfo=0");
+                    URL url = new URL("http://cs1.whitworth.edu/nbrews/NBrewerys.php?Linfo=0");
 
-                        SAXParserFactory factory = SAXParserFactory.newInstance();
-                        SAXParser parser = factory.newSAXParser();
-                        final BeerEntryHandler handler = new BeerEntryHandler();
-                        parser.parse(url.openStream(), handler);
+                    SAXParserFactory factory = SAXParserFactory.newInstance();
+                    SAXParser parser = factory.newSAXParser();
+                    final BeerEntryHandler handler = new BeerEntryHandler();
+                    parser.parse(url.openStream(), handler);
 
 
-                        final Handler h = new Handler(Looper.getMainLooper()) {
-                            @Override
-                            public void handleMessage(Message m) {
-                                LinearLayout l = (LinearLayout) LatestReleases.this.findViewById(R.id.lrLayout);
-                                for (int i = 0; i < handler.get_entries().size(); i++) {
-                                    Button b = new Button(LatestReleases.this);
-                                    String n = handler.get_entries().get(i).get_Craft_Beer_Name();
-                                    b.setText(n);
-                                    b.setTextColor(Color.WHITE);
-                                    b.setBackground(getResources().getDrawable(R.drawable.listbutton));
-                                    LinearLayout.LayoutParams lp =
-                                            new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
-                                                    LinearLayout.LayoutParams.WRAP_CONTENT);
-                                    lp.setMargins(0, 0, 0, 0);
-                                    b.setLayoutParams(lp);
+                    final Handler h = new Handler(Looper.getMainLooper()) {
+                        @Override
+                        public void handleMessage(Message m) {
+                            LinearLayout l = (LinearLayout) LatestReleases.this.findViewById(R.id.lrLayout);
+                            for (int i = 0; i < handler.get_entries().size(); i++) {
+                                Button b = new Button(LatestReleases.this);
+                                b.setId(Integer.parseInt(handler.get_entries().get(i).get_Craft_Beer_ID()));
+                                String n = handler.get_entries().get(i).get_Craft_Beer_Name();
+                                b.setText(n);
+                                b.setTextColor(Color.WHITE);
+                                b.setBackground(getResources().getDrawable(R.drawable.listbutton));
+                                LinearLayout.LayoutParams lp =
+                                        new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
+                                                LinearLayout.LayoutParams.WRAP_CONTENT);
+                                lp.setMargins(0, 0, 0, 0);
+                                b.setLayoutParams(lp);
 
-                                    b.setOnClickListener(new Button.OnClickListener() {
-                                        public void onClick(View v) {
-                                            buttonOnClick(v);
-                                        }
-                                    });
+                                b.setOnClickListener(new Button.OnClickListener() {
+                                    public void onClick(View v) {
+                                        buttonOnClick(v);
+                                    }
+                                });
 
-                                    l.addView(b);
-                                }
+                                l.addView(b);
                             }
-                        };
-                        h.obtainMessage().sendToTarget();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-
+                        }
+                    };
+                    h.obtainMessage().sendToTarget();
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
-            };
-            new Thread(r).start();
-        }
+
+            }
+        };
+        new Thread(r).start();
+    }
 
     /**
      * OnClick function for buttons (opens corresponding Beer Info page)
+     *
      * @param v
      */
     public void buttonOnClick(View v) {
         Button b = (Button) v;
-        startActivity(new Intent(getApplicationContext(), BeerInfo.class));
+        //startActivity(new Intent(getApplicationContext(), BeerInfo.class));*/
+
+        Intent intent = new Intent(getApplicationContext(), BeerInfo.class);
+        intent.putExtra("idbeer", b.getId());
+        startActivity(intent);
     }
 
 
@@ -101,6 +107,7 @@ public class LatestReleases extends ActionBarActivity {
 
     /**
      * OnClick function for home button on page (pulls up home screen)
+     *
      * @param v
      */
     public void latesthomeOnClick(View v) {
@@ -110,6 +117,7 @@ public class LatestReleases extends ActionBarActivity {
 
     /**
      * OnClick function for back button on page (pulls up previous screen)
+     *
      * @param v
      */
     public void latestbackOnClick(View v) {
