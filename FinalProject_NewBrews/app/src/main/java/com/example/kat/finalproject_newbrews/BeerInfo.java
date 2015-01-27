@@ -8,7 +8,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-
+/**
+ * Functions for Beer Info page (that is pulled up from Latest Releases)
+ */
 public class BeerInfo extends ActionBarActivity {
 
     @Override
@@ -25,11 +27,19 @@ public class BeerInfo extends ActionBarActivity {
         return true;
     }
 
+    /**
+     * OnClick function for home button on page (pulls up home screen)
+     * @param v
+     */
     public void beerinfohomeOnClick(View v) {
         Button b = (Button) v;
         startActivity(new Intent(getApplicationContext(), MainActivity.class));
     }
 
+    /**
+     * OnClick function for back button on page (pulls up previous screen)
+     * @param v
+     */
     public void beerinfobackOnClick(View v) {
         Button b = (Button) v;
         startActivity(new Intent(getApplicationContext(), LatestReleases.class));

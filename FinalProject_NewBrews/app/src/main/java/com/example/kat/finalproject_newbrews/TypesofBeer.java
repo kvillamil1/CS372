@@ -19,15 +19,23 @@ import java.net.URL;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
-
+/**
+ * Functions for Types of Beer main page
+ */
 public class TypesofBeer extends ActionBarActivity {
 
+    /**
+     * onCreation relative information is taken from database, parsed, and assigned to buttons that are
+     * dynamically created on page. Button designs, layout params and onClickListener are specified
+     * within loop.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_types_beer);
 
-            Runnable r = new Runnable() {
+        for(int i=0; i<10; i++) {
+        Runnable r = new Runnable() {
                 @Override
                 public void run() {
                     try {
@@ -76,12 +84,15 @@ public class TypesofBeer extends ActionBarActivity {
                 }
             };
             new Thread(r).start();
-        }
+        }}
 
+    /**
+     * onClick function for buttons (pulls of Beers of Type page); returns id of button in order to
+     * access correct information for next page
+     * @param v
+     */
     public void buttonOnClick(View v) {
         Button b = (Button) v;
-        //startActivity(new Intent(getApplicationContext(), BeersOfType.class));
-
         Intent intent = new Intent(getApplicationContext(), BeersOfType.class);
         intent.putExtra("idtype", b.getId());
         startActivity(intent);
@@ -96,11 +107,19 @@ public class TypesofBeer extends ActionBarActivity {
         return true;
     }
 
+    /**
+     * OnClick function for home button on page (pulls up home screen)
+     * @param v
+     */
     public void typebeerhomeOnClick(View v) {
         Button b = (Button) v;
         startActivity(new Intent(getApplicationContext(), MainActivity.class));
     }
 
+    /**
+     * OnClick function for back button on page (pulls up previous screen)
+     * @param v
+     */
     public void typebeerbackOnClick(View v) {
         Button b = (Button) v;
         startActivity(new Intent(getApplicationContext(), MainActivity.class));

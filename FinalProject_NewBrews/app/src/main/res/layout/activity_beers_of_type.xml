@@ -1,3 +1,5 @@
+<!--XML layout for Beers of a specified Type page-->
+
 <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -11,6 +13,7 @@
     android:columnOrderPreserved="false"
     android:rowOrderPreserved="false">
 
+    <!--Layout for Logo-->
     <LinearLayout
         android:id="@+id/latestLinearLayout"
         android:layout_width="match_parent"
@@ -26,6 +29,7 @@
 
     </LinearLayout>
 
+    <!--Enables scrolling for buttons-->
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
@@ -37,6 +41,7 @@
         </LinearLayout>
     </ScrollView>
 
+    <!--Layout for Navigation Buttons-->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="47dp"

@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.Button;
 
 
+/**
+ * Functions for Bar/Restaurant Info page
+ */
 public class BarResPage extends ActionBarActivity {
 
     @Override
@@ -25,11 +28,19 @@ public class BarResPage extends ActionBarActivity {
         return true;
     }
 
+    /**
+     * OnClick function for home button on page (pulls up home screen)
+     * @param v
+     */
     public void brhomeOnClick(View v) {
         Button b = (Button) v;
         startActivity(new Intent(getApplicationContext(), MainActivity.class));
     }
 
+    /**
+     * OnClick function for back button on page (pulls up previous screen)
+     * @param v
+     */
     public void brbackOnClick(View v) {
         Button b = (Button) v;
         startActivity(new Intent(getApplicationContext(), BarsRestaurants.class));

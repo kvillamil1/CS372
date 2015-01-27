@@ -1,3 +1,4 @@
+<!--XML layout for Bar/Restaurant Main page-->
 <GridLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
@@ -14,7 +15,7 @@
         android:columnOrderPreserved="false"
         android:rowOrderPreserved="false">
 
-
+        <!--Layout for Header-->
         <LinearLayout
             android:id="@+id/restLinearLayout"
             android:layout_width="match_parent"
@@ -42,6 +43,7 @@
             android:layout_gravity="top" />
         </LinearLayout>
 
+    <!--Enables scrolling for buttons-->
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
@@ -53,6 +55,7 @@
         </LinearLayout>
     </ScrollView>
 
+    <!--Layout for Navigation Buttons-->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="47dp"

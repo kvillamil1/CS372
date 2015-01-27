@@ -8,7 +8,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-
+/**
+ * Functions for Home page
+ */
 public class MainActivity extends ActionBarActivity {
 
     @Override
@@ -25,16 +27,28 @@ public class MainActivity extends ActionBarActivity {
         return true;
     }
 
+    /**
+     * onClick function for Latest Releases button (pulls up Latest Releases page)
+     * @param v
+     */
     public void latestOnClick(View v) {
         Button typeButton = (Button) v;
         startActivity(new Intent(getApplicationContext(),LatestReleases.class));
     }
 
+    /**
+     * onClick function for Types of Beers button (pulls up Types of Beers page)
+     * @param v
+     */
     public void typeOnClick(View v) {
         Button typeButton = (Button) v;
         startActivity(new Intent(getApplicationContext(),TypesofBeer.class));
     }
 
+    /**
+     * onClick function for Bars/Restaurants button (pulls up Bars/Restaurants main page)
+     * @param v
+     */
     public void barOnClick(View v) {
         Button barButton = (Button) v;
         startActivity(new Intent(getApplicationContext(), BarsRestaurants.class));

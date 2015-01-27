@@ -18,9 +18,16 @@ import java.net.URL;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
-
+/**
+ * Functions for Beers of a specified Type page
+ */
 public class BeersOfType extends ActionBarActivity {
 
+    /**
+     * onCreation relative information is taken from database, parsed, and assigned to buttons that are
+     * dynamically created on page. Button designs, layout params and onClickListener are specified
+     * within loop.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,6 +84,10 @@ public class BeersOfType extends ActionBarActivity {
         new Thread(r).start();
     }
 
+    /**
+     * OnClick function for buttons (opens corresponding Beer Info page)
+     * @param v
+     */
     public void buttonOnClick(View v) {
         Button b = (Button) v;
         startActivity(new Intent(getApplicationContext(), BeerInfo2.class));
@@ -90,11 +101,19 @@ public class BeersOfType extends ActionBarActivity {
         return true;
     }
 
+    /**
+     * OnClick function for home button on page (pulls up home screen)
+     * @param v
+     */
     public void beertypehomeOnClick(View v) {
         Button b = (Button) v;
         startActivity(new Intent(getApplicationContext(), MainActivity.class));
     }
 
+    /**
+     * OnClick function for back button on page (pulls up previous screen)
+     * @param v
+     */
     public void beertypebackOnClick(View v) {
         Button b = (Button) v;
         startActivity(new Intent(getApplicationContext(), TypesofBeer.class));
