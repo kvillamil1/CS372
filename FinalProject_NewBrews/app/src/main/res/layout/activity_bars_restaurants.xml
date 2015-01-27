@@ -1,19 +1,16 @@
 <!--XML layout for Bar/Restaurant Main page-->
-<GridLayout
+<LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingRight="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
         android:orientation="vertical"
         tools:context="com.example.kat.finalproject_newbrews.BarsRestaurants"
-        android:background="#ff000000"
-        android:columnCount="1"
-        android:columnOrderPreserved="false"
-        android:rowOrderPreserved="false">
+        android:background="#ff000000">
 
         <!--Layout for Header-->
         <LinearLayout
@@ -46,7 +43,8 @@
     <!--Enables scrolling for buttons-->
     <ScrollView
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="0dp"
+        android:layout_weight="1">
         <LinearLayout
             android:id="@+id/brlayout"
             android:layout_width="match_parent"
@@ -87,4 +85,4 @@
 
     </RelativeLayout>
 
-</GridLayout>
+</LinearLayout>

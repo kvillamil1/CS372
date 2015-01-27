@@ -1,17 +1,17 @@
 <!--XML layout for Beers of a specified Type page-->
 
-<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:orientation="vertical"
     tools:context="com.example.kat.finalproject_newbrews.BeersOfType"
-    android:background="#ff000000"
-    android:columnCount="1"
-    android:columnOrderPreserved="false"
-    android:rowOrderPreserved="false">
+    android:background="#ff000000">
 
     <!--Layout for Logo-->
     <LinearLayout
@@ -32,7 +32,8 @@
     <!--Enables scrolling for buttons-->
     <ScrollView
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="0dp"
+        android:layout_weight="1">
         <LinearLayout
             android:id="@+id/botLayout"
             android:layout_width="match_parent"
@@ -71,4 +72,4 @@
             android:layout_marginRight="5dp" />
 
     </RelativeLayout>
-</GridLayout>
+</LinearLayout>

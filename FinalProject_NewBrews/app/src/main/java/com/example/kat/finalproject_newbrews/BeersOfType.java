@@ -35,6 +35,7 @@ public class BeersOfType extends ActionBarActivity {
         Bundle bn = getIntent().getExtras();
         final int idtemp = bn.getInt("idtype");
         final String idvalue = Integer.toString(idtemp);
+
         Runnable r = new Runnable() {
             @Override
             public void run() {
