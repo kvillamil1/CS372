@@ -56,7 +56,9 @@ public class BarsRestaurants extends ActionBarActivity {
                             for (int i = 0; i < handler.get_types().size(); i++) {
                                 Button b = new Button(BarsRestaurants.this);
                                 String n = handler.get_types().get(i).getTypeName();
+                                int id = Integer.parseInt(handler.get_types().get(i).getRestID());
                                 b.setText(n);
+                                b.setId(id);
                                 b.setTextColor(Color.WHITE);
                                 b.setBackground(getResources().getDrawable(R.drawable.listbutton));
                                 LinearLayout.LayoutParams lp =
@@ -91,7 +93,11 @@ public class BarsRestaurants extends ActionBarActivity {
      */
     public void buttonOnClick(View v) {
         Button b = (Button) v;
-        startActivity(new Intent(getApplicationContext(), BarResPage.class));
+        //startActivity(new Intent(getApplicationContext(), BarResPage.class));
+        Intent intent = new Intent(getApplicationContext(), BarResPage.class);
+        intent.putExtra("idbar", b.getId());
+        startActivity(intent);
+
     }
 
 

@@ -43,6 +43,8 @@ public class RestEntryHandler extends DefaultHandler {
             _RestID_Num = _data;
         else if (qName.equals("RestName"))
             _RestName = _data;
+        else if (qName.equals("RestPhone"))
+            _RestPhone = _data;
         else if (qName.equals("RestAddress"))
             _RestAddress = _data;
         else if (qName.equals("RestCity"))
