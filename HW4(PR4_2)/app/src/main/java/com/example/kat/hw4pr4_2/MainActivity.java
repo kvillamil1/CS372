@@ -22,7 +22,7 @@ public class MainActivity extends ActionBarActivity {
 
     public void buttonOnClick(View v) {
         //does something when button is clicked
-       Button button = (Button) v;
+       Button button = (Button) v; //PT -- You really don't need this line
        TextView textOne = (TextView) findViewById(R.id.textCoin);
        Random rnd = new Random();
        int randomNumber = rnd.nextInt(2);
