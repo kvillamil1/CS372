@@ -26,6 +26,7 @@ import javax.xml.parsers.SAXParserFactory;
 /**
  * Functions for Bar/Restaurant Info page
  */
+ //PT -- I'd like to see these secondary pages have more going on. Images, ability to add reviews, and so on
 public class BarResPage extends ActionBarActivity {
 
     @Override
