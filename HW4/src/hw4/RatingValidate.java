@@ -14,14 +14,14 @@ public class RatingValidate {
     public static boolean validate(int r) {
         boolean rateIsValid;
         
-        if( r>=1 && r<=5)
+        if( r>=1 && r<=5)//PT -- very good
             rateIsValid = true;
         else
             rateIsValid = false;
         
         return rateIsValid;
     }
-    
+    //PT -- javadoc? -4
     public static void popup(String pop) {
         JFrame frame = new JFrame("");
         JOptionPane.showMessageDialog(frame, pop);
