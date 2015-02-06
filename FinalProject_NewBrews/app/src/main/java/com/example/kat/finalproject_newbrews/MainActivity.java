@@ -11,6 +11,7 @@ import android.widget.Button;
 /**
  * Functions for Home page
  */
+ //PT -- I really like the work you guys started here. It'd be cool to get this published
 public class MainActivity extends ActionBarActivity {
 
     @Override
